@@ -285,7 +285,7 @@ async function generateWithBackend({ mode, prompt, style, imageFile }) {
   }
 
   const endpoint = mode === "image" ? BACKEND_CONFIG.endpoints.imageToImage : BACKEND_CONFIG.endpoints.textToImage;
-  const url = endpoint;
+  const url = BACKEND_CONFIG.baseUrl + endpoint;
   const requestOptions = mode === "image" ? buildImageToImageRequest(prompt, style, imageFile) : buildTextToImageRequest(prompt, style);
 // AFTER (fixed):
   const response = await fetch(url, requestOptions);
