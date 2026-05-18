@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ghibli AI - Create</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Ghibli AI home">
+        <span class="brand-mark" aria-hidden="true">G</span>
+        <span>Ghibli AI</span>
+      </a>
+      <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a class="active" href="create.html">Create</a>
+        <a href="features.html">Features</a>
+        <a href="gallery.html">Gallery</a>
+      </nav>
+      <a class="header-cta" href="create.html">Create</a>
+    </header>
+
+    <main>
+      <section class="creator-section section-pad page-section" aria-labelledby="create-heading">
+        <div class="section-shell">
+          <div class="section-heading">
+            <p class="eyebrow">Create</p>
+            <h2 id="create-heading">Build your animated portrait</h2>
+          </div>
+
+          <div class="creator-grid">
+            <article class="tool-card">
+              <div class="mode-switch" role="tablist" aria-label="Generation type">
+                <button class="mode-option active" type="button" role="tab" aria-selected="true" data-mode="text">
+                  Text to Image
+                </button>
+                <button class="mode-option" type="button" role="tab" aria-selected="false" data-mode="image">
+                  Image to Image
+                </button>
+              </div>
+
+              <h3 id="mode-title">Text to Image</h3>
+
+              <div class="preset-field">
+                <label class="field-label compact" for="style-preset">Image style preset</label>
+                <div class="select-shell">
+                  <select id="style-preset">
+                    <option value="anime">Anime</option>
+                    <option value="comic">Comic</option>
+                    <option value="cinematic">Cinematic</option>
+                    <option value="cartoon">Cartoon</option>
+                    <option value="watercolor">Watercolor</option>
+                    <option value="fantasy">Fantasy</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="upload-zone image-only" id="upload-zone" tabindex="0" hidden>
+                <input id="image-input" type="file" accept="image/*" />
+                <div class="media-frame" id="source-frame">
+                  <div class="empty-state">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M12 5v14M5 12h14" />
+                    </svg>
+                    <span>Choose an image to transform</span>
+                  </div>
+                </div>
+                <div class="drop-actions">
+                  <button class="icon-button" id="choose-button" type="button" aria-label="Choose image">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" /></svg>
+                  </button>
+                  <button class="icon-button ghost" id="clear-button" type="button" aria-label="Clear image">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M4 7h16" />
+                      <path d="M10 11v6M14 11v6" />
+                      <path d="M6 7l1 13h10l1-13M9 7V5h6v2" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+
+              <label class="field-label" for="prompt-input">Input prompt</label>
+              <div class="prompt-shell">
+                <textarea id="prompt-input" rows="4" placeholder="A dragon is flying in the sky."></textarea>
+                <div class="prompt-meta" aria-hidden="true">
+                  <span class="prompt-ready"></span>
+                  <span id="prompt-count">4</span>
+                </div>
+              </div>
+
+              <button class="primary-button full" id="create-button" type="button">Generate</button>
+            </article>
+
+            <article class="tool-card result-card">
+              <div class="card-title-row">
+                <h3>Your Ghibli Image Result</h3>
+                <div class="result-actions">
+                  <button class="icon-button small" id="download-button" type="button" aria-label="Download result">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M12 4v11" />
+                      <path d="M7 10l5 5 5-5" />
+                      <path d="M5 20h14" />
+                    </svg>
+                  </button>
+                  <button class="icon-button small ghost" id="reset-result" type="button" aria-label="Reset result">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M4 7v5h5" />
+                      <path d="M5 12a7 7 0 1 0 2-5" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+
+              <div class="result-stage" id="result-stage">
+                <div class="result-empty" id="default-result">
+                  <span>No image generated yet</span>
+                </div>
+                <canvas id="result-canvas" width="960" height="720" hidden></canvas>
+              </div>
+              <p class="result-status" id="result-status" aria-live="polite">Enter a prompt and generate your first image.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="section-shell footer-grid">
+        <a class="brand" href="index.html">
+          <span class="brand-mark" aria-hidden="true">G</span>
+          <span>Ghibli AI</span>
+        </a>
+        <p>Independent creative full stack application using Spring Boot for backend. Not affiliated with Studio Ghibli.</p>
+       
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
