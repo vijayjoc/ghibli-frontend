@@ -1,11 +1,11 @@
 
 const BACKEND_CONFIG = {
   useBackend: true,
-  baseUrl: "https://proud-transformation-production-965a.up.railway.app/",
-  endpoints: {
-    textToImage: "https://proud-transformation-production-965a.up.railway.app//v2/generate-from-text",
-    imageToImage: "https://proud-transformation-production-965a.up.railway.app/v2/generate",
-  },
+  baseUrl: "https://proud-transformation-production-965a.up.railway.app",
+endpoints: {
+    textToImage: "/api/v2/generate-from-text",
+    imageToImage: "/api/v2/generate",
+},
 };
 
 const header = document.querySelector(".site-header");
