@@ -1,16 +1,10 @@
-/*
- * Spring Boot integration notes:
- * - Keep `useBackend` false while this frontend is running as a static prototype.
- * - Set it to true after your Spring Boot endpoints are ready.
- * - Expected backend response: JSON with either `imageUrl` or `imageBase64`.
- * - If frontend and backend run on different ports, enable CORS in Spring Boot.
- */
+
 const BACKEND_CONFIG = {
   useBackend: true,
-  baseUrl: "http://localhost:8080",
+  baseUrl: "https://proud-transformation-production-965a.up.railway.app/",
   endpoints: {
-    textToImage: "http://localhost:8080/api/v2/generate-from-text",
-    imageToImage: "http://localhost:8080/api/v2/generate",
+    textToImage: "https://proud-transformation-production-965a.up.railway.app//v2/generate-from-text",
+    imageToImage: "https://proud-transformation-production-965a.up.railway.app/v2/generate",
   },
 };
 
